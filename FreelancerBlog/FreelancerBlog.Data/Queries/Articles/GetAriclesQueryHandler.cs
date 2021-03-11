@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FreelancerBlog.Data.Queries.Articles
 {
-    public class GetAriclesQueryHandler : RequestHandler<GetAriclesQuery, IQueryable<Article>>
+    public class GetAriclesQueryHandler : RequestHandler<GetArticlesQuery, IQueryable<Article>>
     {
         private FreelancerBlogContext _context;
 
@@ -20,7 +20,7 @@ namespace FreelancerBlog.Data.Queries.Articles
             _context = context;
         }
 
-        protected override IQueryable<Article> Handle(GetAriclesQuery message)
+        protected override IQueryable<Article> Handle(GetArticlesQuery message)
         {
             return _context.Articles.Include(a => a.ApplicationUser).Include(a => a.ArticleRatings).Include(a => a.ArticleComments);
         }

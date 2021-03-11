@@ -40,7 +40,7 @@ namespace FreelancerBlog.UnitTests.Controllers.Admin
         {
             var articles = new List<Article> { new Article(), new Article(), new Article() }.AsQueryable();
 
-            A.CallTo(() => _mediator.Send(A<GetAriclesQuery>._, A<CancellationToken>._)).Returns(articles);
+            A.CallTo(() => _mediator.Send(A<GetArticlesQuery>._, A<CancellationToken>._)).Returns(articles);
 
             var result = await _sut.GetArticleTableData(new DataTablesParam());
 

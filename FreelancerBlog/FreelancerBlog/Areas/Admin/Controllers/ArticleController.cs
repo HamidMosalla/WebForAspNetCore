@@ -41,7 +41,7 @@ namespace FreelancerBlog.Web.Areas.Admin.Controllers
         [HttpGet]
         public async Task<DataTablesResult<ArticleViewModel>> GetArticleTableData(DataTablesParam dataTableParam)
         {
-            var articles = await _mediator.Send(new GetAriclesQuery());
+            var articles = await _mediator.Send(new GetArticlesQuery());
 
             var articleViewModels = articles.Select(a => new ArticleViewModel
             {

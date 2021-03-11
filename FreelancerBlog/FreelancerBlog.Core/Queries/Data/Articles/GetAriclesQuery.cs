@@ -4,5 +4,5 @@ using MediatR;
 
 namespace FreelancerBlog.Core.Queries.Data.Articles
 {
-    public class GetAriclesQuery : IRequest<IQueryable<Article>>{ }
+    public class GetArticlesQuery : IRequest<IQueryable<Article>>{ }
 }

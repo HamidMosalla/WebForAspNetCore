@@ -42,7 +42,7 @@ namespace FreelancerBlog.UnitTests.Controllers.Root
         {
             var articles = new[] { new Article { ArticleId = 1 } }.AsQueryable();
 
-            A.CallTo(() => _mediatorFake.Send(A<GetAriclesQuery>.Ignored, A<CancellationToken>.Ignored)).Returns(articles);
+            A.CallTo(() => _mediatorFake.Send(A<GetArticlesQuery>.Ignored, A<CancellationToken>.Ignored)).Returns(articles);
 
             await _sut.Index();
 

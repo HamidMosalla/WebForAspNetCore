@@ -30,7 +30,7 @@ namespace FreelancerBlog.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var articles = await _mediator.Send(new GetAriclesQuery());
+            var articles = await _mediator.Send(new GetArticlesQuery());
 
             var articlesViewModel = _mapper.Map<IQueryable<Article>, List<ArticleViewModel>>(articles);
 
